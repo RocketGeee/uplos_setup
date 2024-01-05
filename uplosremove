@@ -26,7 +26,8 @@ sudo apt purge -y hypnotix
 sudo apt purge -y rhythmbox*
 sudo apt purge -y librhythmbox-core10*
 sudo apt purge -y rhythmbox-data
-# sudo apt --purge remove -y libreoffice
+sudo apt purge -y timeshift
+# sudo apt purge -y libreoffice
 
 # System Update and Upgrade
 sudo apt update
