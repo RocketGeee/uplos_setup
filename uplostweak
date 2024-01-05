@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+#
+# tweaks and cusomisation
+#
+
+
+#disable automount 
+gsettings set org.cinnamon.desktop.media-handling automount-open false
+
+
+
+
+# End of Script
+
+# Display Installation Complete Message
+echo""
+echo""
+echo""
+echo""
+echo "All good now :)" 
+echo "Please, restart the computer"

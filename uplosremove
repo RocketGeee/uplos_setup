@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#create zfs snapshot
+sudo zfs snapshot -r rpool@ootb
+sudo zfs snapshot -r bpool@ootb
+
+# ask user to switch to local mirror
+
+echo "please switch to local mirror"
+read -p "Press Enter to continue" </dev/tty
+echo""
+
+# Uninstall unwanted Apps
+sudo dpkg --configure -a
+sudo apt purge -y hexchat*
+sudo apt purge -y thunderbird*
+sudo apt purge -y transmission*
+sudo apt purge -y transmission-gtk*
+sudo apt purge -y transmission-common*
+sudo apt purge -y warpinator
+sudo apt purge -y timeshift
+sudo apt purge -y webapp-manager
+sudo apt purge -y hypnotix
+sudo apt purge -y rhythmbox*
+sudo apt purge -y librhythmbox-core10*
+sudo apt purge -y rhythmbox-data
+# sudo apt --purge remove -y libreoffice
+
+# System Update and Upgrade
+sudo apt update
+sudo apt install --fix-missing -y
+sudo apt upgrade --allow-downgrades -y
+sudo apt full-upgrade --allow-downgrades -y
+
+# System Clean Up
+sudo apt install -f
+sudo apt autoremove -y
+sudo apt autoclean
+sudo apt clean
+
+
+# End of Script
+
+# Display Installation Complete Message
+echo""
+echo""
+echo"*****************************"
+echo""
+echo "All good now :)" 
+echo "Please, restart the computer"
