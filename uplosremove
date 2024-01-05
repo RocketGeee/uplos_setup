@@ -5,11 +5,13 @@ sudo zfs snapshot -r rpool@ootb
 sudo zfs snapshot -r bpool@ootb
 
 # ask user to switch to local mirror
+echo ""
+echo ""
 
 echo "please switch to local mirror"
 read -p "Press Enter to continue" </dev/tty
-echo""
-
+echo ""
+echo ""
 # Uninstall unwanted Apps
 sudo dpkg --configure -a
 sudo apt purge -y hexchat*
@@ -44,7 +46,7 @@ sudo apt clean
 # Display Installation Complete Message
 echo""
 echo""
-echo"*****************************"
+echo""
 echo""
 echo "All good now :)" 
 echo "Please, restart the computer"
