@@ -41,6 +41,8 @@ sudo apt install -y anydesk
 #remove autostart anydesk
 sudo systemctl disable anydesk.service 
 sudo apt install -y tailscale
+sudo apt install -y sanoid
+
 
 # Finishing Things Up
 ## System Update and Upgrade
