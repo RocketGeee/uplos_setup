@@ -9,8 +9,19 @@
 #disable automount 
 gsettings set org.cinnamon.desktop.media-handling automount-open false
 
+#Set a reasonable maximum log size for systemd https://easylinuxtipsproject.blogspot.com/p/clean-mint.html
+sudo journalctl --vacuum-size=40M
+sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=100M/' /etc/systemd/journald.conf
+sudo journalctl --rotate
 
-
+#reduce other system logs
+sudo rm -v /var/log/*.log* /var/log/syslog*
+sudo sed -i 's/rotate 7/rotate 1/g' /etc/logrotate.d/rsyslog
+sudo sed -i 's/rotate 4/rotate 1/g' /etc/logrotate.d/rsyslog
+sudo sed -i 's/rotate 4/rotate 1/g' /etc/logrotate.d/rsyslog
+sudo sed -i 's/weekly/daily/g' /etc/logrotate.d/rsyslog
+sudo sed -i 's/rotate 4/rotate 1/g' /etc/logrotate.conf
+sudo sed -i 's/weekly/daily/g' /etc/logrotate.conf
 
 # End of Script
 
