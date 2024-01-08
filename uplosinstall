@@ -21,8 +21,8 @@ sudo curl -o /usr/share/keyrings/wwcom-archive-keyring.pgp https://wwcom.ch/apt-
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/wwcom-archive-keyring.pgp] https://wwcom.ch/apt-repo stable main" | sudo tee /etc/apt/sources.list.d/wwcom.list
 
 # vivaldi repo
-wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/vivaldi-browser.gpg
-echo "deb [signed-by=/usr/share/keyrings/vivaldi-browser.gpg arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/archive/deb/ stable main" | sudo dd of=/etc/apt/sources.list.d/vivaldi-archive.list
+#wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/vivaldi-browser.gpg
+#echo "deb [signed-by=/usr/share/keyrings/vivaldi-browser.gpg arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/archive/deb/ stable main" | sudo dd of=/etc/apt/sources.list.d/vivaldi-archive.list
 
 #tailscale
 sudo curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
@@ -35,13 +35,13 @@ sudo apt install -y xbanish
 sudo apt install -y micro
 sudo apt install -y cockpit cockpit-bridge cockpit-networkmanager
 #sudo apt install -y libnotify-bin
-sudo apt install -y vivaldi-stable
+#sudo apt install -y vivaldi-stable
 sudo apt install -y brave-browser
 sudo apt install -y anydesk
 #remove autostart anydesk
 sudo systemctl disable anydesk.service 
 sudo apt install -y tailscale
-sudo apt install -y sanoid
+#sudo apt install -y sanoid
 
 
 # Finishing Things Up
