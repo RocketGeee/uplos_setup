@@ -9,13 +9,14 @@ echo ""
 echo ""
 echo "please switch to local mirror"
 sudo mintupdate
-#read -p "Press Enter to continue" </dev/tty
+read -p "Press Enter to continue" </dev/tty
 echo ""
 echo ""
 echo "please set up Timeshift"
 echo ""
 echo ""
 sudo timeshift-gtk
+sudo timeshift --create --comments "ootb2" --tags D
 
 
 
