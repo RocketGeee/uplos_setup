@@ -1,17 +1,24 @@
 #!/bin/bash
 
 #create zfs snapshot
-sudo zfs snapshot -r rpool@ootb
-sudo zfs snapshot -r bpool@ootb
+#sudo zfs snapshot -r rpool@ootb
+#sudo zfs snapshot -r bpool@ootb
 
 # ask user to switch to local mirror
 echo ""
 echo ""
-
 echo "please switch to local mirror"
-read -p "Press Enter to continue" </dev/tty
+sudo mintupdate
+#read -p "Press Enter to continue" </dev/tty
 echo ""
 echo ""
+echo "please set up Timeshift"
+echo ""
+echo ""
+sudo timeshift-gtk
+
+
+
 # Uninstall unwanted Apps
 sudo dpkg --configure -a
 sudo apt purge -y hexchat*
@@ -20,7 +27,7 @@ sudo apt purge -y transmission*
 sudo apt purge -y transmission-gtk*
 sudo apt purge -y transmission-common*
 sudo apt purge -y warpinator
-sudo apt purge -y timeshift
+#sudo apt purge -y timeshift
 sudo apt purge -y webapp-manager
 sudo apt purge -y hypnotix
 sudo apt purge -y rhythmbox*
